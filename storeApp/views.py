@@ -1,15 +1,17 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.contrib.auth.models import User, auth
+from .models import Item
 
 # Create your views here.
 
 
-def index(request): 
+def index(request):
     
     return render(request,'index.html',)
 
 
-def home(request):
-    words = request.POST['text']
-    numberOfw = len(words.split())
-    return render(request,'home.html',{'number':numberOfw})
+def login(request):
+    
+
+    return render(request,'./authentication/login.html',)
