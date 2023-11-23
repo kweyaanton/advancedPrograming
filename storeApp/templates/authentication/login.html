@@ -2,23 +2,29 @@
 
 <link rel="stylesheet" href="{% static './assets/css/login.css' %}">
 
+{{data.username}}
+{{data.password}}
+
+
+
 <div class="login-box">
     <h2>Login</h2>
-    <form>
+    <form method="post" action="signup">
+      {% csrf_token %}
       <div class="user-box">
-        <input type="text" name="" required="">
+        <input type="text" name="username" required="">
         <label>Username</label>
       </div>
       <div class="user-box">
-        <input type="password" name="" required="">
+        <input type="password" name="password" required="">
         <label>Password</label>
       </div>
-      <a href="#">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        Submit
-      </a>
+      <button type="submit">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Submit
+      </button>
     </form>
   </div>
